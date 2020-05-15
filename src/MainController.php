@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App;
 
@@ -14,6 +16,7 @@ class MainController
 {
     private const QUOTE = <<<TXT
 I have a dream that one day, down in Alabama, with its vicious racists, with its governor having his lips dripping with the words of "interposition" and "nullification"
+ — one day right there in Alabama little black boys and black girls will be able to join hands with little white boys and white girls as sisters and brothers.
 TXT;
 
     private SerializerInterface $serializer;
@@ -60,6 +63,6 @@ TXT;
      */
     private function makeEnvVars(): array
     {
-        return \array_filter(\getenv(), fn(string $key) => \strpos($key, 'APP') === 0, ARRAY_FILTER_USE_KEY);
+        return \array_filter(\getenv(), fn (string $key) => \strpos($key, 'APP') === 0, ARRAY_FILTER_USE_KEY);
     }
 }
