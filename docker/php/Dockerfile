@@ -8,8 +8,10 @@ ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so php
 
 ARG UID
 ARG GID
+
 ENV APP_TARGET_UID ${UID:-1000}
 ENV APP_TARGET_GID ${GID:-1000}
+ENV APP_FIO "EVGENII"
 
 RUN apk --no-cache add shadow && \
     usermod -u ${APP_TARGET_UID} www-data
